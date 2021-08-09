@@ -13,6 +13,7 @@ const player4 = new Swordsman('Jack');
 const player5 = new Undead('Sveta');
 const player6 = new Zombie('Olga');
 
+// eslint-disable-next-line no-undef
 test('В инстансе класса Team в контейнере members должен появиться 1 объект с данными переданного в метод персонажа', () => {
   const team = new Team();
   team.add(player6);
@@ -26,36 +27,47 @@ test('В инстансе класса Team в контейнере members до
   };
   const Test = new Set();
   Test.add(expected);
+  // eslint-disable-next-line no-undef
   expect(team.members).toEqual(Test);
 });
 
+// eslint-disable-next-line no-undef
 test('При добавлении игрока , если в контейнере этот игрок уже есть , должен произойти выброс ошибки', () => {
   const team = new Team();
   team.add(player1);
+  // eslint-disable-next-line no-undef
   expect(() => team.add(player1)).toThrowError('Такой персонаж уже eсть в команде');
 });
 
+// eslint-disable-next-line no-undef
 test('В инстансе класса Team в контейнере members должны появиться объекты всех персонажей', () => {
   const team = new Team();
   const Test = new Set([player1, player2, player3, player4, player5, player6]);
   team.addAll([player1, player2, player3, player4, player5, player6]);
+  // eslint-disable-next-line no-undef
   expect(team.members).toEqual(Test);
 });
 
+// eslint-disable-next-line no-undef
 test('В инстансе класса Team в контейнере members должно появиться 3 объекта ', () => {
   const team = new Team();
   team.addAll([player1, player2, player3]);
+  // eslint-disable-next-line no-undef
   expect(team.members.size).toBe(3);
 });
 
+// eslint-disable-next-line no-undef
 test('При передаче дублей в метод addAll, не должно быть ошибки и в инстансе не дожно быть дублей', () => {
   const team = new Team();
   team.addAll([player1, player2, player3, player1, player2, player3]);
+  // eslint-disable-next-line no-undef
   expect(team.members.size).toBe(3);
 });
 
+// eslint-disable-next-line no-undef
 test('Метод toArray должен производить конвертацию Set в массив.', () => {
   const team = new Team();
   team.addAll([player1, player2, player3, player4, player5, player6]);
+  // eslint-disable-next-line no-undef
   expect(team.toArray()).toEqual([player1, player2, player3, player4, player5, player6]);
 });
